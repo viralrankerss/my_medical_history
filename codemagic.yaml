@@ -3,7 +3,8 @@ workflows:
     name: Medical History Android APK
     max_build_duration: 60
     environment:
-      flutter: stable
+  flutter: stable
+  instance_type: linux_x2
     scripts:
       - name: Generate Android project
         script: |
