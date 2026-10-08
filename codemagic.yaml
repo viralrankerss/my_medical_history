@@ -3,8 +3,10 @@ workflows:
   android-debug:
     name: Medical History Android APK
     max_build_duration: 60
+
     environment:
       flutter: stable
+
     scripts:
       - name: Generate Android project
         script: |
@@ -14,14 +16,13 @@ workflows:
         script: |
           flutter pub get
 
-      - name: Analyze code
+      - name: Analyze Flutter code
         script: |
           flutter analyze lib/main.dart
 
-      - name: Build debug APK
+      - name: Build Android APK
         script: |
           flutter build apk --debug
 
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
-
